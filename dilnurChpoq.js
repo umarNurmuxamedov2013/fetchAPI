@@ -5,6 +5,7 @@ fetch("https://api.escuelajs.co/api/v1/products")
 function createCards(products) {
     const cards = document.querySelector(".cards")
     products.forEach(product => {
+        // console.log(product.title);
         const card = document.createElement("div")
         card.classList.add("card")
 
@@ -12,10 +13,11 @@ function createCards(products) {
         const id = document.createElement("h2")
         id.classList.add("idNumber")
         id.textContent = `id : ${product.id}`
+        console.log();
 
         const titleProduct = document.createElement("h2")
-        titleProduct.classList.add("titile")
-        titleProduct.textContent = `title: ${product.title}`
+        titleProduct.classList.add("title")
+        titleProduct.innerHTML = `title: ${product.title}`
 
         
         const descriptionProduct = document.createElement("p")
@@ -29,10 +31,10 @@ function createCards(products) {
         price.textContent = `${product.price}$`
 
 
-        card.append(id,titleProduct.descriptionProduct,price)
+        card.append(id,titleProduct,descriptionProduct,price)
         cards.append(card)
 
-        console.log(card);
+        // console.log(card);
 
     });
 }
